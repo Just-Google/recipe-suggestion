@@ -1,4 +1,5 @@
 from pymongo import MongoClient
+import api
 
 class Database:
     client = MongoClient('localhost', 27017)
@@ -6,7 +7,8 @@ class Database:
     collection = db["recipe-collection"]
 
     def __init__(self):
-
+        if self.collection.find_one({}) == None:
+            api.get_recipe_multithread(self)
         return
 
     def get(self, item):

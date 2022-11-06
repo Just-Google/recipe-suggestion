@@ -1,18 +1,22 @@
 from flask import Flask, request, redirect
 from flask import render_template
 import api
+from mongo import Database
+
+db = Database()
+print("Mongodb is up")
 
 app = Flask(__name__)
+print("Server is up")
 
 @app.route("/")
 def index():
 
-    return render_template("index.html")
+    return render_template("index.html", len = 0, recipes = [])
 
 @app.route("/recipe", methods = ['POST'])
 def find_recipe():
-    #code to find recipe
-    recipes = api.get_recipe_from_ingredient(request.data)
+    recipes = api.get_recipe_from_ingredient(request.data, db)
 
     for i in recipes:
         ingredients = i["ingredients"]
