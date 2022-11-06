@@ -74,7 +74,5 @@ def get_recipe_from_ingredient(data, db):
 
     # print(data)
 
-    recipes = db.get({"ingredients": {"$all": data}})
-
     return recipes
 
