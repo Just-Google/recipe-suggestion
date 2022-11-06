@@ -6,7 +6,6 @@ const Home = () => {
 
 return (
     <div>
-    <NavBar></NavBar>
     <Header></Header>
     <Ingredient></Ingredient>
     <Footer></Footer>
