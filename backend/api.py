@@ -61,12 +61,20 @@ def get_recipe_from_ingredient(data, db):
     recipes = []
 
     for i in data:
-        regx = re.compile(". " + i + " .", re.IGNORECASE)
-        result = db.get({"ingredients": regx})
+        i = i.strip()
+        result = db.get({"ingredients": {"$regex": i}})
         for j in result:
             j.pop("_id")
             if j not in recipes:
                 recipes.append(j)
+
+    # for i in range(len(data)):
+    #     # data[i].strip()
+    #     data[i] = {"$regex": data[i]}
+
+    # print(data)
+
+    recipes = db.get({"ingredients": {"$all": data}})
 
     return recipes
 
