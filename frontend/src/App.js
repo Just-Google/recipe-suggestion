@@ -1,25 +1,30 @@
-import logo from './logo.svg';
+import React from "react";
 import './App.css';
+class App extends React.Component {
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+	// ComponentDidMount is used to
+	// execute the code
+	/*componentDidMount() {
+		fetch()
+			.then()
+			.then(() => {
+				this.setState({
+				});
+			})
+	} */
+
+  table = (
+    <div>
+      <div>kung pao chicken</div>
+      <div>stuff1 stuff2 stuff3</div>
     </div>
   );
+
+  
+	render() {
+    return <div>hello world</div>
+}
+
 }
 
 export default App;
