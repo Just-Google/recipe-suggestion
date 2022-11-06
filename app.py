@@ -11,7 +11,6 @@ print("Server is up")
 
 @app.route("/")
 def index():
-
     return render_template("index.html", len = 0, recipes = [])
 
 @app.route("/recipe", methods = ['POST'])
