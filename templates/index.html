@@ -1,1 +1,8 @@
 test
+
+{%for i in range(0, len)%}
+{{recipes[i].name}}
+{{recipes[i].ingredients}}
+{{recipes[i].picture}}
+{{recipes[i].link}}
+{%endfor%}
