@@ -11,11 +11,35 @@ nav {
 
 footer {
   font-family: Montserrat, sans-serif;
-
+  background-color: yellow;
 }
 
+section {
+  max-width: 200px;
+  height: auto;
+  border: 1px solid #a2a2a2;
+  text-align: center;
+  margin: 10px;
+}
 
+img {
+  width: 100%;
+}
 
+.recipeName {
+  font-size:medium;
+}
+
+.recipes {
+  margin-bottom:-16px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+h6 {
+  color:black
+}
 
 .nav-img {
     height: 50px;
@@ -55,14 +79,7 @@ footer {
     background-color: rgb(205, 235, 253);
   }
   
-  form {
-    display: flex;
-  }
-  
-  form td:last-child {
-    display: flex;
-    justify-content: space-evenly;
-  }
+
   
 .inputgap{
   gap: 100px;
