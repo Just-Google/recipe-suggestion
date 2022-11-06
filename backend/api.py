@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
-import json
 import threading
+import re
 
 THREADCOUNT = 4
 
@@ -61,7 +61,8 @@ def get_recipe_from_ingredient(data, db):
     recipes = []
 
     for i in data:
-        result = db.get({"ingredients": i})
+        regx = re.compile(". " + i + " .", re.IGNORECASE)
+        result = db.get({"ingredients": regx})
         for j in result:
             j.pop("_id")
             if j not in recipes:
