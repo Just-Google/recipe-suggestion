@@ -1,4 +1,4 @@
-from flask import Flask, request, redirect
+from flask import Flask, request, redirect, send_file
 from flask import render_template
 import api
 from mongo import Database
@@ -11,11 +11,18 @@ print("Server is up")
 
 @app.route("/")
 def index():
-    return render_template("index.html", len = 0, recipes = [])
+    return render_template("suggestion.html", len = 0, recipes = [])
+
+@app.route("/App.css")
+def css():
+    return send_file("./templates/App.css")
 
 @app.route("/recipe", methods = ['POST'])
 def find_recipe():
-    recipes = api.get_recipe_from_ingredient(request.data, db)
+    ing = request.form.get("ingredients")
+    ing = ing.split(",")
+    
+    recipes = api.get_recipe_from_ingredient(ing, db)
 
     for i in recipes:
         ingredients = i["ingredients"]
@@ -31,4 +38,4 @@ def find_recipe():
 
         i["ingredients"] = text
 
-    return render_template("index.html", len = len(recipes), recipes = recipes)
+    return render_template("suggestion.html", len = len(recipes), recipes = recipes)

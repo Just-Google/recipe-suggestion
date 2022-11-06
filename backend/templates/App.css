@@ -1,0 +1,69 @@
+.jumbotron
+{		
+    background-color: yellow;
+    color: black;
+    font-family: Montserrat, sans-serif;
+    padding: 50px;
+}
+nav {
+  font-family: Montserrat, sans-serif;
+}
+
+footer {
+  font-family: Montserrat, sans-serif;
+
+}
+
+
+
+
+.nav-img {
+    height: 50px;
+    padding-top: 0;
+}
+
+.nav-link{
+    color: yellow
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 1rem;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th,
+  td {
+    border: 1px solid #ffffff;
+    text-align: left;
+    padding: 2px;
+    font-size: 16px;
+  }
+  
+  th {
+    background-color: blue;
+    color: white
+  }
+  
+  td {
+    background-color: rgb(205, 235, 253);
+  }
+  
+  form {
+    display: flex;
+  }
+  
+  form td:last-child {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+.inputgap{
+  gap: 100px;
+}

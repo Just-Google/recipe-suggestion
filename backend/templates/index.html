@@ -1,8 +1,12 @@
 test
 
 {%for i in range(0, len)%}
+
+<div>
 <div>{{recipes[i].name}}</div>
 {{recipes[i].ingredients}}
 <img src = "{{recipes[i].picture}}">
 <a href = "{{recipes[i].link}}"></a>
+</div>
+
 {%endfor%}

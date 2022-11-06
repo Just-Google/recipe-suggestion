@@ -56,12 +56,11 @@ def get_recipe(num, db):
         db.insert(item)
         req.close()
 
-def get_recipe_from_ingredient(js_data, db):
-    data = json.loads(js_data)
+def get_recipe_from_ingredient(data, db):
 
     recipes = []
 
-    for i in data["ingredients"]:
+    for i in data:
         result = db.get({"ingredients": i})
         for j in result:
             j.pop("_id")
